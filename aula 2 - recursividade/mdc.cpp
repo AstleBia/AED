@@ -14,12 +14,16 @@ int mdcIterativo(int x, int y) {
     return 0;
 }
 
-int mdcRecursivo() {
-
+int mdcRecursivo(int x, int y) {
+    if (y == 0) {
+        return x;
+    }
+    return mdcRecursivo(y, x % y);
 }
 
-void printarMdc(int resultado) {
-    std::cout << "O mdc eh: " << resultado;
+void printarMdc(int x, int y) {
+    std::cout << "Iterativo: " << mdcIterativo(x,y) << "\n";
+    std::cout << "Recursivo: " << mdcRecursivo(x,y);
 }
 
 int main(){
@@ -28,6 +32,7 @@ int main(){
     std::cin >> num1;
     std::cout << "Digite o segundo numero: ";
     std::cin >> num2;
-    printarMdc(mdcIterativo(num1,num2));
+    printarMdc(num1,num2);
+
 
 }
