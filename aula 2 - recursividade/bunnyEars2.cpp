@@ -16,10 +16,26 @@ int bunnyEars2(int bunnies) {
     return 2 + bunnyEars2(bunnies-1);
 }
 
+int bunnyEars2Iterative(int bunnies) {
+    int total = 0;
+    for (int i = 0; i <= bunnies; i++) {
+        if (i == 0) {
+
+        }
+        else if (i%2==0) {
+            total += 3;
+        }
+        else {
+            total += 2;
+        }
+    }
+    return total;
+}
+
 int main() {
     int bunnies;
     std::cout << "Type the amount of bunnies: ";
     std::cin >> bunnies;
-    std::cout << bunnies << " bunnies have " << bunnyEars2(bunnies) << " ears!";
+    std::cout << bunnies << " bunnies have " << bunnyEars2Iterative(bunnies) << " ears!";
 }
 
