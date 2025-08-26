@@ -26,7 +26,7 @@ void print_list(Node *list) {
 }
 
 int main() {
-    Node *lista = nullptr;
+    Node* lista = nullptr;
     lista = insert_head(lista, 1);
     lista = insert_head(lista, 2);
     lista = insert_head(lista, 3);
