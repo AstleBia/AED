@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-typedef struct Node {
+struct Node {
     int value;
     Node *next;
 };
