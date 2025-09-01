@@ -29,7 +29,7 @@ void printar_pilha(Pilha* pilha) {
 
 int main() {
     Pilha* pilha = nullptr;
-    char* palavra = "caderno";
+    char* palavra = "";
     pilha = inserir_palavra(palavra, pilha);
     printar_pilha(pilha);
 }

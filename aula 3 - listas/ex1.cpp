@@ -31,6 +31,8 @@ Node* insert_end(Node *list, int value) {
     return list;
 }
 
+Node* inserirOrdenado(Node* list, in)
+
 void print_list(Node *list) {
     do {
         std::cout << list->value << " -> ";
