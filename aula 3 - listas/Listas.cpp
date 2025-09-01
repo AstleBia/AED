@@ -37,13 +37,15 @@ No* inserirOrdenado(No* lista, int valor, int procurar) {
         return novo;
     }
     No* temp = lista;
-    No* resto_lista = nullptr;
+    No* temp2 = lista;
     while (temp->dado != procurar) {
         temp = temp->prox;
     }
-    resto_lista = temp->prox;
-    temp->prox = novo;
-    novo->prox = resto_lista;
+    while (temp2->prox != temp) {
+        temp2 = temp2->prox;
+    }
+    temp2->prox = novo;
+    novo->prox = temp;
     return lista;
 }
 
