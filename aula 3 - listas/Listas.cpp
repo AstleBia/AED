@@ -8,6 +8,14 @@ typedef struct No {
     struct No* prox;
 } No;
 
+No* removerInicio(No* lista) {
+    if (lista->prox == nullptr) {
+        return nullptr;
+    }
+    lista = lista->prox;
+    return lista;
+}
+
 No* inserirInicio(No* lista, int valor) {
     No* novo = new No();
     novo->dado = valor;
@@ -67,6 +75,7 @@ int main() {
     lista = inserirFim(lista, 50);
     lista = inserirInicio(lista, 60);
     lista = inserirOrdenado(lista, 70, 50);
+    lista = removerInicio(lista);
     imprimirLista(lista);
     delete lista;
     return 0;
