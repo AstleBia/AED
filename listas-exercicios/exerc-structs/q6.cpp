@@ -1,14 +1,6 @@
 //
 // Created by Ana Beatriz Astle on 06/09/25.
 //
-/*
-* Crie uma struct chamada Livro, que contenha:
-• Título (string de até 50 caracteres)
-• Autor (string de até 50 caracteres)
-• Ano de publicação (inteiro)
-Crie uma função que recebe um vetor de Livro e exibe os livros publicados após
-um determinado ano (definido pelo usuário).
- */
 #include <iostream>
 using namespace std;
 
