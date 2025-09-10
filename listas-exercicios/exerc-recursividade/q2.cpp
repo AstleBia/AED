@@ -18,4 +18,7 @@ int maior_elemento(int vet[], int n) {
 int main() {
     int vetor[] = {1,5,3,4,8,15,6,7};
     cout << maior_elemento(vetor, 8);
+    for (int i = 0; i<8; i++) {
+        cout << "\n\t" << vetor[i];
+    }
 }
