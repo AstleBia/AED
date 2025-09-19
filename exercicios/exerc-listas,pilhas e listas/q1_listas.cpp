@@ -37,8 +37,8 @@ No* remover(No* lista, int valor) {
         return lista;
     }
     if (atual->valor == valor) {
-        No* valor_deletado = atual->prox;
-        atual->prox = atual->prox->prox;
+        No* valor_deletado = atual;
+        lista = atual->prox;
         delete valor_deletado;
         return lista;
     }
@@ -51,6 +51,15 @@ No* remover(No* lista, int valor) {
     return lista;
 }
 
+int contador(No* lista) {
+    int contador = 0;
+    No* atual = lista;
+    while (atual != nullptr) {
+        contador += 1;
+        atual = atual->prox;
+    }
+    return contador;
+}
 
 void exibir_lista(No* lista) {
     No* atual = lista;
@@ -61,37 +70,13 @@ void exibir_lista(No* lista) {
     cout << "NULL\n";
 }
 
-void menu() {
-    cout << "-- OPERACOES --\n1 - INSERIR INICIO\n2 - INSERIR FIM\n3 - REMOVER VALOR\n4 - SAIR\n";
-}
 
 int main() {
     No* lista = nullptr;
-    int opcao = 0;
-    while (true) {
-        int valor = 0;
-        menu();
-        cin >> opcao;
-        if (opcao == 1) {
-            cout << "Digite um valor para adicionar ao inicio: ";
-            cin >> valor;
-            lista = inserir_inicio(lista, valor);
-            exibir_lista(lista);
-        }
-        else if (opcao == 2) {
-            cout << "Digite um valor para adicionar ao final da lista: ";
-            cin >> valor;
-            lista = inserir_fim(lista,valor);
-            exibir_lista(lista);
-        }
-        else if (opcao == 3) {
-            cout << "Digite um valor para remover: ";
-            cin >> valor;
-            lista = remover(lista, valor);
-            exibir_lista(lista);
-        }
-        else {
-            break;
-        }
-    }
+    lista = inserir_inicio(lista, 1);
+    lista = inserir_inicio(lista, 15);
+    lista = inserir_inicio(lista, 20);
+    lista = remover(lista,20);
+    exibir_lista(lista);
+    cout<<contador(lista)<<" nós na lista!";
 }
