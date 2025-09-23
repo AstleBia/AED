@@ -88,6 +88,17 @@ void exibir_lista(No* lista) {
     cout << "NULL\n";
 }
 
+No* reverter_lista(No* lista) {
+    No* atual = lista;
+    No* anterior = nullptr;
+    while (atual != nullptr) {
+        No* prox = atual->prox;
+        atual->prox = anterior;
+        anterior = atual;
+        atual = prox;
+    }
+    return anterior;
+}
 
 int main() {
     No* lista = nullptr;
@@ -96,6 +107,9 @@ int main() {
     lista = inserir_ordenado(lista, 6);
     lista = inserir_ordenado(lista, 2);
     lista = inserir_ordenado(lista, 3);
+    exibir_lista(lista);
+    cout << "lista invertida\n";
+    lista = reverter_lista(lista);
     exibir_lista(lista);
     cout<<contador(lista)<<" nós na lista!";
     delete lista;
